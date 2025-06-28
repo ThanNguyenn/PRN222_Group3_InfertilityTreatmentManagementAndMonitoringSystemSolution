@@ -6,6 +6,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
+builder.Services.AddSingleton(new JsonSerializerOptions
+{
+    Converters = { new JsonStringEnumConverter() }
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
