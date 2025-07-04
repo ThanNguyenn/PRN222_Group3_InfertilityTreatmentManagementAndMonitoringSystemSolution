@@ -33,8 +33,9 @@ public partial class ApplicationDbContext : DbContext
 
     public virtual DbSet<User> Users { get; set; }
 
-    //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-    //    => optionsBuilder.UseSqlServer("Server=(local);Database=InfertilityTreatmentDB;User Id=sa;Password=12345;TrustServerCertificate=True;");
+    //    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    //#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
+    //        => optionsBuilder.UseSqlServer("Server=localhost;uid=sa;pwd=12345;database=InfertilityTreatmentDB;TrustServerCertificate=True");
 
     private string GetConnectionString()
     {
@@ -54,7 +55,7 @@ public partial class ApplicationDbContext : DbContext
     {
         modelBuilder.Entity<Appointment>(entity =>
         {
-            entity.HasKey(e => e.AppointmentId).HasName("PK__Appointm__8ECDFCC2BD382CEA");
+            entity.HasKey(e => e.AppointmentId).HasName("PK__Appointm__8ECDFCC2242C471C");
 
             entity.ToTable("Appointment");
 
@@ -80,7 +81,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<Blog>(entity =>
         {
-            entity.HasKey(e => e.BlogId).HasName("PK__Blog__54379E301A214733");
+            entity.HasKey(e => e.BlogId).HasName("PK__Blog__54379E30A2775A06");
 
             entity.ToTable("Blog");
 
@@ -96,7 +97,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<Feedback>(entity =>
         {
-            entity.HasKey(e => e.FeedbackId).HasName("PK__Feedback__6A4BEDD64DA24138");
+            entity.HasKey(e => e.FeedbackId).HasName("PK__Feedback__6A4BEDD62407471B");
 
             entity.ToTable("Feedback");
 
@@ -111,7 +112,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<MedicalRecord>(entity =>
         {
-            entity.HasKey(e => e.RecordId).HasName("PK__MedicalR__FBDF78E997C1B7F3");
+            entity.HasKey(e => e.RecordId).HasName("PK__MedicalR__FBDF78E94568DCAF");
 
             entity.ToTable("MedicalRecord");
 
@@ -136,7 +137,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<PatientRequest>(entity =>
         {
-            entity.HasKey(e => e.RequestId).HasName("PK__PatientR__33A8517ABEA084ED");
+            entity.HasKey(e => e.RequestId).HasName("PK__PatientR__33A8517A3F858580");
 
             entity.ToTable("PatientRequest");
 
@@ -162,7 +163,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<Schedule>(entity =>
         {
-            entity.HasKey(e => e.ScheduleId).HasName("PK__Schedule__9C8A5B499719EAC1");
+            entity.HasKey(e => e.ScheduleId).HasName("PK__Schedule__9C8A5B495DD22479");
 
             entity.ToTable("Schedule");
 
@@ -183,7 +184,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<TreatmentService>(entity =>
         {
-            entity.HasKey(e => e.ServiceId).HasName("PK__Treatmen__C51BB00A65F4C87B");
+            entity.HasKey(e => e.ServiceId).HasName("PK__Treatmen__C51BB00A08952E24");
 
             entity.ToTable("TreatmentService");
 
@@ -199,14 +200,18 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<User>(entity =>
         {
-            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4CD575EAEF");
+            entity.HasKey(e => e.UserId).HasName("PK__User__1788CC4C76F626C5");
+
+            entity.ToTable("User");
 
             entity.Property(e => e.UserId).HasDefaultValueSql("(newid())");
             entity.Property(e => e.FullName).HasMaxLength(100);
             entity.Property(e => e.IsActive).HasDefaultValue(true);
             entity.Property(e => e.Password).HasMaxLength(255);
             entity.Property(e => e.PhoneNumber).HasMaxLength(20);
-            entity.Property(e => e.Role).HasMaxLength(20);
+            entity.Property(e => e.Role)
+                .HasMaxLength(20)
+                .HasDefaultValue("Customer");
             entity.Property(e => e.UserName).HasMaxLength(100);
         });
 

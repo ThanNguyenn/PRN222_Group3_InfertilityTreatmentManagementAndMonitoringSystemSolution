@@ -5,13 +5,6 @@ namespace InfertilityTreatmentSystem.DAL.Entities;
 
 public partial class User
 {
-    public enum UserRole
-    {
-        Customer,
-        Doctor,
-        Admin
-    }
-
     public Guid UserId { get; set; }
 
     public string UserName { get; set; } = null!;
@@ -24,7 +17,7 @@ public partial class User
 
     public string? PhoneNumber { get; set; }
 
-    public UserRole Role { get; set; } = UserRole.Customer;
+    public string Role { get; set; } = null!;
 
     public bool IsActive { get; set; }
 
