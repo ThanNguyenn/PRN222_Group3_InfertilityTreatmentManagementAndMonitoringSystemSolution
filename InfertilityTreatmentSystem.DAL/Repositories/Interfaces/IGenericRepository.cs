@@ -56,7 +56,8 @@ public interface IGenericRepository<T> : IDisposable where T : class
     void UpdateRange(IEnumerable<T> entities);
 
     #endregion
-
+    
     void DeleteAsync(T entity);
     void DeleteRangeAsync(IEnumerable<T> entities);
+    Task<int> SaveChangesAsync();
 }
