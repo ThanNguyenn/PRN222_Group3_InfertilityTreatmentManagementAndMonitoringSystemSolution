@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfertilityTreatmentSystem.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfertilityTreatmentSystem.DAL", "InfertilityTreatmentSystem.DAL\InfertilityTreatmentSystem.DAL.csproj", "{CCD67B45-9E95-487C-86CD-A00ED6B0C434}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InfertilityTreatmentSystem", "InfertilityTreatmentSystem\InfertilityTreatmentSystem.csproj", "{A9A1FFAA-0CF3-4347-99D1-0E2E36DD9D17}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,10 +21,6 @@ Global
 		{CCD67B45-9E95-487C-86CD-A00ED6B0C434}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCD67B45-9E95-487C-86CD-A00ED6B0C434}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCD67B45-9E95-487C-86CD-A00ED6B0C434}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A9A1FFAA-0CF3-4347-99D1-0E2E36DD9D17}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A9A1FFAA-0CF3-4347-99D1-0E2E36DD9D17}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A9A1FFAA-0CF3-4347-99D1-0E2E36DD9D17}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A9A1FFAA-0CF3-4347-99D1-0E2E36DD9D17}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
